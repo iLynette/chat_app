@@ -1,9 +1,14 @@
 class RoomsController < ApplicationController
+  before_action :set_room, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[show]
+
   def index
     @rooms = Room.all
   end
 
-  def show; end
+  def show
+    @message = Message.new
+  end
 
   def new
     @room = Room.new
