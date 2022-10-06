@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @message = Message.New
+    @message = Message.new
    end
 
   def new
